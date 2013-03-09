@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sun.grizzly:grizzly-http:1.9.18-k">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/grizzly/grizzly-http/1.9.18-k/grizzly-http-1.9.18-k.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/grizzly/grizzly-http/1.9.18-k/grizzly-http-1.9.18-k-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/grizzly/grizzly-http/1.9.18-k/grizzly-http-1.9.18-k-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
