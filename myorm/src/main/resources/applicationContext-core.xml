@@ -17,16 +17,6 @@
 
     <!--<tx:annotation-driven />-->
 
-    <!-- Inicializa componentes anotados -->
     <context:component-scan base-package="com.leff.myorm"/>
-
-    <bean id="mapper" class="org.dozer.DozerBeanMapper">
-        <property name="mappingFiles">
-            <list>
-                <!--<value>dozer/dz-global-core-model.xml</value>-->
-                <value>dozer/core/usuario/usuario.xml</value>
-            </list>
-        </property>
-    </bean>
 
 </beans>

@@ -20,7 +20,7 @@ import java.sql.*;
 /**
  * Implementación del Manager JDBC.
  *
- * @author ALTIA
+ * @author leff
  */
 @Component
 public final class JdbcManagerImpl implements JdbcManager {

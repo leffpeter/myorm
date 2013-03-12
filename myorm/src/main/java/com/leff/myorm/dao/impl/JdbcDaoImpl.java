@@ -7,6 +7,7 @@ package com.leff.myorm.dao.impl;
 import com.leff.myorm.bean.BaseBean;
 import com.leff.myorm.bean.StandardBean;
 import com.leff.myorm.dao.JdbcDao;
+import com.leff.myorm.exception.internal.EntityNotFoundException;
 import com.leff.myorm.exception.internal.ReflectException;
 import com.leff.myorm.jdbc.manager.JdbcManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import java.util.List;
  * @param <PK>
  * @author leff
  */
-public abstract class JdbcDaoImpl<E extends BaseBean, PK extends Serializable, T extends Throwable> extends BaseDaoImpl<E, PK, T> implements JdbcDao<E, PK, T> {
+public abstract class JdbcDaoImpl<E extends BaseBean, PK extends Serializable, T extends EntityNotFoundException> extends BaseDaoImpl<E, PK, T> implements JdbcDao<E, PK, T> {
 
     /**
      * Manager JDBC.

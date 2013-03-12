@@ -8,6 +8,7 @@ import com.leff.myorm.bean.BaseBean;
 import com.leff.myorm.bean.helper.BeanRowMapper;
 import com.leff.myorm.constant.DataModel;
 import com.leff.myorm.dao.impl.JdbcDaoImpl;
+import com.leff.myorm.exception.internal.EntityNotFoundException;
 import com.leff.myorm.exception.internal.InternalException;
 import com.leff.myorm.exception.internal.ReflectException;
 import com.leff.myorm.jdbc.core.BeanPreparedStatementCreator;
@@ -31,7 +32,7 @@ import java.util.List;
  * @param <PK>
  * @author leff
  */
-public abstract class JdbcDaoOracleImpl<E extends BaseBean, PK extends Serializable, T extends Throwable> extends JdbcDaoImpl<E, PK, T> {
+public abstract class JdbcDaoOracleImpl<E extends BaseBean, PK extends Serializable, T extends EntityNotFoundException> extends JdbcDaoImpl<E, PK, T> {
 
     /**
      * NULL de Oracle.

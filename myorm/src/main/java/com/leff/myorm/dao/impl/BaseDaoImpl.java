@@ -5,6 +5,7 @@
 package com.leff.myorm.dao.impl;
 
 import com.leff.myorm.dao.Dao;
+import com.leff.myorm.exception.internal.EntityNotFoundException;
 import com.leff.myorm.jdbc.sql.query.SqlQuery;
 import com.leff.myorm.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ import java.util.Map;
  * @author leff
  */
 @Transactional(propagation = Propagation.MANDATORY)
-public abstract class BaseDaoImpl<E, PK, T extends Throwable> extends JdbcDaoSupport implements Dao {
+public abstract class BaseDaoImpl<E, PK, T extends EntityNotFoundException> extends JdbcDaoSupport implements Dao {
 
     /**
      * Datasource.

@@ -12,7 +12,7 @@ import java.sql.ResultSet;
  * IMPORTANTE: Esta interfaz no dispone de método para cerrar la conexión,
  * ya que dicha conexión se proporcionará o se recuperará del contexto de Spring.
  *
- * @author ALTIA
+ * @author leff
  */
 public interface JdbcManager {
 

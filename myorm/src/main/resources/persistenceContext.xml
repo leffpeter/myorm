@@ -3,9 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
-
-
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
         http://www.springframework.org/schema/tx 
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
@@ -15,34 +13,6 @@
         <property name="location" value="classpath:db-hsql.properties"/>
     </bean>
 
-    <bean id="entityManagerFactory"
-          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="persistenceXmlLocation" value="persistence-test.xml"/>
-        <property name="persistenceUnitName" value="sifo3-test"/>
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="showSql" value="${db.showSql}"/>
-                <property name="generateDdl" value="${db.generateDdl}"/>
-                <property name="databasePlatform" value="${db.dialect}"/>
-            </bean>
-        </property>
-        <property name="jpaDialect">
-            <bean class="com.leff.myorm.jpa.hibernate.IsolationSupportHibernateJpaDialect"/>
-        </property>
-    </bean>
-
-    <!--<bean id="dataSource" class="es.xunta.formacion.sifo3.core.routing.RoutingDataSource">-->
-    <!--<property name="targetDataSources">-->
-    <!--<map key-type="es.xunta.formacion.sifo3.core.routing.DataSourceType">-->
-    <!--<entry key="SIFO3" value-ref="sifo3DataSource"/>-->
-    <!--<entry key="SIFO" value-ref="sifoDataSource"/>-->
-    <!--<entry key="FC" value-ref="fcDataSource"/>-->
-    <!--</map>-->
-    <!--</property>-->
-    <!--<property name="defaultTargetDataSource" ref="sifo3DataSource"/>-->
-    <!--</bean>-->
-
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${db.driver}"/>
@@ -51,11 +21,9 @@
         <property name="password" value="${db.password}"/>
     </bean>
 
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <tx:annotation-driven/>
-
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 </beans>

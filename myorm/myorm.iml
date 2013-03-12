@@ -5,7 +5,7 @@
       <configuration>
         <fileset id="fileset1" name="XML Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/META-INF/application-context-root.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext-core-model.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContext-core.xml</file>
         </fileset>
       </configuration>
     </facet>

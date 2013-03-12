@@ -139,7 +139,7 @@ public final class PostInitRunner implements ApplicationListener<ContextRefreshe
     /**
      * Clase wrapper de un método @PostInit
      */
-    private final class PostInitMethod implements Comparable<PostInitMethod> {
+    private static final class PostInitMethod implements Comparable<PostInitMethod> {
 
         /**
          * Método.

@@ -5,6 +5,7 @@
 package com.leff.myorm.dao;
 
 import com.leff.myorm.bean.BaseBean;
+import com.leff.myorm.exception.internal.EntityNotFoundException;
 import com.leff.myorm.exception.internal.InternalException;
 
 import java.io.Serializable;
@@ -18,7 +19,7 @@ import java.util.List;
  * @param <PK>
  * @author leff
  */
-public interface JdbcDao<E extends BaseBean, PK extends Serializable, T extends Throwable> extends Dao {
+public interface JdbcDao<E extends BaseBean, PK extends Serializable, T extends EntityNotFoundException> extends Dao {
 
     /**
      * Inserta un bean.
